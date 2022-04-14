@@ -34,7 +34,7 @@ jobs:
     - name: Install dependencies on windows
       if: ${{ matrix.os == 'windows-latest' }}
       run:
-        IF EXIST "requirements.txt" echo "teste"
+        if exist "requirements.txt"( echo "teste")
     - name: Lint with flake8  
       run: |
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
