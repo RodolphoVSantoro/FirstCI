@@ -28,11 +28,11 @@ jobs:
         python -m pip install --upgrade pip
     - name: Install dependencies on linux
     - if: ${{ matrix.os == 'ubuntu-latest' }}
-      run:
+      run: |
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Install dependencies on windows
     - if: ${{ matrix.os == 'windows-latest' }}
-      run:
+      run: |
         if EXIST "requirements.txt" ; then pip install -r requirements.txt;
     - name: Lint with flake8  
       run: |
