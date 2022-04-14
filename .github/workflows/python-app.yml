@@ -34,7 +34,7 @@ jobs:
     - name: Install dependencies on windows
       if: ${{ matrix.os == 'windows-latest' }}
       run: |
-        if (-not(Test-Path -Path "requirements.txt" -PathType Leaf)) {
+        if (Test-Path -Path "requirements.txt" -PathType Leaf) {
           pip install -r requirements.txt
         }
     - name: Lint with flake8  
